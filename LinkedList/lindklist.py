@@ -62,6 +62,24 @@ class Node(object):
         self.next = second_node
 
         
+    def reverse_list(self):
+        '''reverse a linkedlist
+       prev (start)1 2 3 4 5 -> 5 4 3 2 1
+        '''
+        prev = None
+        curr = self
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+            
+
+        while prev:
+            yield prev.data
+            prev = prev.next
+
+
         
 
 a = Node(5)
@@ -72,19 +90,34 @@ e = Node(11)
 f = Node(3)
 a.next = b
 b.next = c
-c.next = None
+c.next = d
+d.next = e
+e.next = f
+f.next = None
 
 
-d.insert_node_at_tail(a)
-e.insert_node_at_head(a)
-f.inset_between_the_nodes(b,c)
-value = e.print_list()
+# d.insert_node_at_tail(a)
+# e.insert_node_at_head(a)
+# f.inset_between_the_nodes(b,c)
+# value = a.print_list()
+# print(next(value))
+# print(next(value))
+# print(next(value))
+# print(next(value))
+# print(next(value))
+# print(next(value))
+
+# print("#"*10)
+value = a.reverse_list()
+# print(value)
 print(next(value))
 print(next(value))
 print(next(value))
 print(next(value))
 print(next(value))
 print(next(value))
+
+
 
 
 
